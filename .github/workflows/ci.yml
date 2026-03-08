@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    name: Build & Unit Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      # AGP 8.x requires JDK 17; the app itself targets JVM 8.
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # Set up Gradle 8.6 (matches gradle-wrapper.properties) with build caching.
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: "8.6"
+          cache-read-only: false
+
+      - name: Build debug APK
+        run: gradle :app:assembleDebug
+
+      - name: Run unit tests
+        run: gradle :app:testDebugUnitTest
+
+      # Always upload test results so failures can be diagnosed from the
+      # Actions summary even when the test step itself fails.
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: app/build/reports/tests/
+          if-no-files-found: ignore
