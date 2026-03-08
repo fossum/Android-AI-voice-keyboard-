@@ -40,6 +40,14 @@ android {
         viewBinding = true
         buildConfig = true
     }
+
+    testOptions {
+        unitTests {
+            // Make Android framework stubs (e.g. android.util.Log) return default
+            // values instead of throwing RuntimeException in JVM unit tests.
+            isReturnDefaultValues = true
+        }
+    }
 }
 
 dependencies {
