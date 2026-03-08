@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    The keyboard input view shown when the user focuses a text field.
+    Layout:
+      • A preview text area showing the (partial) transcript / AI result.
+      • A large central microphone button.
+      • A small settings button in the corner.
+      • A status text label.
+      • A progress bar shown during Gemini processing.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorKeyboardBackground"
+    android:elevation="4dp">
+
+    <!-- Text preview area -->
+    <TextView
+        android:id="@+id/tv_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="12dp"
+        android:background="@color/colorSurface"
+        android:textColor="@color/colorOnSurface"
+        android:textSize="16sp"
+        android:hint="Your spoken text will appear here…"
+        android:textColorHint="@color/colorHint"
+        android:gravity="start|center_vertical"
+        android:importantForAccessibility="yes"
+        android:contentDescription="Speech preview" />
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorHint"
+        android:alpha="0.3" />
+
+    <!-- Main control row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:minHeight="80dp">
+
+        <!-- Progress bar (shown during Gemini API call) -->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:visibility="gone"
+            android:indeterminate="true" />
+
+        <!-- Center section: status + mic -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <!-- Status text -->
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tap_to_speak"
+                android:textColor="@color/colorHint"
+                android:textSize="12sp"
+                android:layout_marginBottom="2dp" />
+
+            <!-- Microphone button -->
+            <ImageButton
+                android:id="@+id/btn_mic"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_mic"
+                android:contentDescription="@string/tap_to_speak"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+        <!-- Settings button (right side) -->
+        <ImageButton
+            android:id="@+id/btn_settings"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_settings"
+            android:contentDescription="@string/settings_title"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

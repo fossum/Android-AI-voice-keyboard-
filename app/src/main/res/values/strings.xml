@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Voice Keyboard</string>
+    <string name="keyboard_name">AI Voice Keyboard</string>
+
+    <!-- MainActivity -->
+    <string name="setup_title">Voice Keyboard Setup</string>
+    <string name="setup_description">Complete the three steps below to start using the AI Voice Keyboard:</string>
+    <string name="step1_label">Step 1: Enable Keyboard</string>
+    <string name="btn_enable_keyboard">Open Input Method Settings</string>
+    <string name="step2_label">Step 2: Select Keyboard</string>
+    <string name="btn_select_keyboard">Switch Input Method</string>
+    <string name="step3_label">Step 3: Sign in with Google</string>
+    <string name="btn_sign_in">Sign In with Google</string>
+    <string name="btn_settings">Keyboard Settings</string>
+
+    <!-- Status indicators -->
+    <string name="status_enabled">✓ Keyboard enabled</string>
+    <string name="status_not_enabled">✗ Keyboard not enabled</string>
+    <string name="status_signed_in">✓ Signed in</string>
+    <string name="status_not_signed_in">Not signed in</string>
+
+    <!-- SignInActivity -->
+    <string name="sign_in_title">Google Account</string>
+    <string name="sign_in_prompt">Sign in with your Google account to authorize the AI Voice Keyboard to use Gemini AI. Your own Google account quota will be used.</string>
+    <string name="sign_in_success">Signed in as %1$s</string>
+    <string name="sign_in_token_error">Failed to obtain access token. Please try again.</string>
+    <string name="sign_in_cancelled">Sign-in cancelled.</string>
+    <string name="sign_in_network_error">Network error during sign-in. Please check your connection.</string>
+    <string name="sign_in_failed">Sign-in failed (code %1$d). Please try again.</string>
+    <string name="signed_in_as">Signed in as: %1$s</string>
+    <string name="signed_out">Signed out successfully.</string>
+
+    <!-- SettingsActivity -->
+    <string name="settings_title">Voice Keyboard Settings</string>
+    <string name="account_section_title">Google Account</string>
+    <string name="btn_manage_account">Manage Account / Sign In</string>
+    <string name="btn_clear_token">Sign Out</string>
+    <string name="token_cleared">Signed out. Open the keyboard and tap Sign In to re-authenticate.</string>
+
+    <!-- VoiceKeyboardService -->
+    <string name="tap_to_speak">Tap the microphone to speak</string>
+    <string name="listening">Listening…</string>
+    <string name="processing">Processing with Gemini AI…</string>
+    <string name="status_sign_in_required">Sign in required — tap ⚙ to sign in</string>
+    <string name="please_sign_in">Please sign in with Google first. Tap ⚙ to open Settings.</string>
+    <string name="gemini_error_fallback">AI processing failed. Using raw transcript.</string>
+    <string name="speech_not_available">Speech recognition is not available on this device.</string>
+
+    <!-- Speech errors -->
+    <string name="error_audio">Audio recording error. Please try again.</string>
+    <string name="error_client">Client error. Please try again.</string>
+    <string name="error_permissions">Microphone permission denied.</string>
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_network_timeout">Network timeout. Please try again.</string>
+    <string name="error_no_match">No speech detected. Please try again.</string>
+    <string name="error_recognizer_busy">Speech recognizer is busy. Please wait.</string>
+    <string name="error_server">Server error. Please try again later.</string>
+    <string name="error_speech_timeout">No speech detected. Please try again.</string>
+    <string name="error_unknown">An unknown error occurred. Please try again.</string>
+
+    <!--
+        OAuth2 Web Client ID - MUST be replaced before building.
+        Obtain it from Google Cloud Console > APIs and Services > Credentials.
+        The build will fail at runtime if this placeholder is not replaced.
+    -->
+    <string name="default_web_client_id" translatable="false">YOUR_WEB_CLIENT_ID.apps.googleusercontent.com</string>
+</resources>
