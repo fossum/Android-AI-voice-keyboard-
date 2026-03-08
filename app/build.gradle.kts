@@ -69,4 +69,7 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
+    // Provide real org.json implementation for JVM unit tests (the Android SDK
+    // only ships stubs that throw RuntimeException when called outside a device).
+    testImplementation(libs.org.json)
 }
