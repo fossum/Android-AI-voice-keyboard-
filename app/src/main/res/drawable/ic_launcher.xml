@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App launcher icon (simple microphone on blue background) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#1A73E8"
+        android:pathData="M0,0h108v108H0z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,62c7.18,0 13,-5.82 13,-13V35c0,-7.18 -5.82,-13 -13,-13S41,27.82 41,35v14c0,7.18 5.82,13 13,13z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M75.5,49c0,11.94 -9.69,21.62 -21.5,21.62S32.5,60.94 32.5,49H27c0,15.27 11.28,27.82 26,29.81V87h2v0h2v-8.19C71.72,76.82 83,64.27 83,49z" />
+</vector>

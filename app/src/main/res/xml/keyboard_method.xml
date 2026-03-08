@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Describes this app as an Input Method Engine to Android.
+    The settingsActivity attribute links to SettingsActivity so the user can
+    configure the keyboard directly from the System Keyboard settings screen.
+-->
+<input-method
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:settingsActivity="com.fossum.voicekeyboard.SettingsActivity"
+    android:isDefault="false" />
